@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Pêche Perchée</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <!-- HUD haut -->
+  <div id="hud-top">
+    <div class="pill" id="money">🪙 0</div>
+    <div class="pill" id="bucket-count">🪣 0/6</div>
+    <div class="pill spot" id="spot-name">—</div>
+  </div>
+
+  <div id="hud-buttons">
+    <button class="btn" data-open="shop">🛒 Boutique</button>
+    <button class="btn" data-open="bucket">🪣 Seau</button>
+    <button class="btn" data-open="map">🗺️ Carte</button>
+    <button class="btn" data-open="dex">📖 Poissonnaire</button>
+  </div>
+
+  <!-- Équipement en bas à gauche -->
+  <div id="gear">
+    <div class="gear-line" id="gear-rod">🎣 —</div>
+    <button class="gear-line gear-bait" id="gear-bait" title="Changer d'appât">🪱 —</button>
+  </div>
+
+  <!-- Narrateur -->
+  <div id="narrator" class="hidden"><span class="who" id="narrator-who">Narrateur</span><span id="narrator-text"></span></div>
+
+  <!-- Indication -->
+  <div id="hint"></div>
+
+  <!-- Barre de puissance -->
+  <div id="power" class="hidden"><div id="power-fill"></div><span>PUISSANCE</span></div>
+
+  <!-- Mini-jeu de moulinage -->
+  <div id="reel" class="hidden">
+    <div id="reel-warn"></div>
+    <div class="reel-label">Tension</div>
+    <div id="reel-track"><div id="reel-zone"></div><div id="reel-needle"></div></div>
+    <div class="reel-label">Remontée</div>
+    <div id="reel-prog"><div id="reel-prog-fill"></div></div>
+  </div>
+
+  <!-- Marqueur de touche -->
+  <div id="bang" class="hidden">!</div>
+
+  <!-- Carte de prise -->
+  <div id="catch" class="hidden">
+    <div class="catch-rarity" id="catch-rarity"></div>
+    <div class="catch-name" id="catch-name"></div>
+    <div class="catch-stats"><span id="catch-weight"></span><span id="catch-price"></span></div>
+    <div class="catch-desc" id="catch-desc"></div>
+    <div class="catch-new hidden" id="catch-new">✨ Nouvelle espèce !</div>
+    <button class="btn big" id="catch-ok">Dans le seau !</button>
+  </div>
+
+  <!-- Panneau modal -->
+  <div id="panel-wrap" class="hidden">
+    <div id="panel">
+      <div id="panel-head">
+        <h2 id="panel-title"></h2>
+        <button class="btn close" id="panel-close">✕</button>
+      </div>
+      <div id="panel-tabs"></div>
+      <div id="panel-body"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
